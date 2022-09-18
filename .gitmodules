@@ -1,0 +1,9 @@
+[submodule "3rd-party/catchorg/Catch2"]
+	path = 3rd-party/catchorg/Catch2
+	url = https://github.com/catchorg/Catch2.git
+[submodule "3rd-party/nlohmann/json"]
+	path = 3rd-party/nlohmann/json
+	url = https://github.com/nlohmann/json.git
+[submodule "3rd-party/ericniebler/range-v3"]
+	path = 3rd-party/ericniebler/range-v3
+	url = https://github.com/ericniebler/range-v3.git

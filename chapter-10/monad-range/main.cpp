@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
 
     std::cout << "Listing files with xs | mbind(f)" << std::endl;
     for (const auto& file: directories | mbind(files_in_dir)) {
-        std::cout << file << std::endl;
+        std::cout << file.path().string() << std::endl;
     }
 
     return 0;
