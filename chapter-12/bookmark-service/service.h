@@ -6,11 +6,11 @@
 #include <functional>
 
 // Boost ASIO
-#include <boost/asio.hpp>
+#include <asio.hpp>
 
 // Not a good idea to add a using declaration in a header,
 // but we can live with it for this small example
-using boost::asio::ip::tcp;
+using asio::ip::tcp;
 
 
 /**
@@ -41,9 +41,9 @@ private:
         // Getting a shared pointer to this instance
         // to capture it in the lambda
         auto self = shared_session::shared_from_this();
-        boost::asio::async_read_until(
+        asio::async_read_until(
             m_socket, m_data, '\n',
-            [this, self](const boost::system::error_code& error,
+            [this, self](const asio::error_code& error,
                          std::size_t size) {
                 if (!error) {
                     // Reading a line from the client and
@@ -60,7 +60,7 @@ private:
     }
 
     tcp::socket m_socket;
-    boost::asio::streambuf m_data;
+    asio::streambuf m_data;
     EmitFunction m_emit;
 };
 
@@ -85,7 +85,7 @@ class service {
 public:
     using value_type = std::string;
 
-    explicit service(boost::asio::io_service& service,
+    explicit service(asio::io_context& service,
                      unsigned short port = 42042);
 
     service(const service &other) = delete;

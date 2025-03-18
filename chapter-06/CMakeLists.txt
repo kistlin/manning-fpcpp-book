@@ -1,0 +1,16 @@
+
+add_executable(fibonacci   fibonacci/main.cpp)
+add_executable(generalized-memoization   generalized-memoization/main.cpp)
+add_executable(lazy-sort   lazy-sort/main.cpp)
+add_executable(lazy-val   lazy-val/main.cpp)
+add_executable(recursive-memoization   recursive-memoization/main.cpp)
+add_executable(string-concatenation   string-concatenation/main.cpp)
+add_executable(string-concatenation-refs   string-concatenation-refs/main.cpp)
+
+set_property(TARGET fibonacci   PROPERTY FOLDER "examples/chapter-06")
+set_property(TARGET generalized-memoization   PROPERTY FOLDER "examples/chapter-06")
+set_property(TARGET lazy-sort   PROPERTY FOLDER "examples/chapter-06")
+set_property(TARGET lazy-val   PROPERTY FOLDER "examples/chapter-06")
+set_property(TARGET recursive-memoization   PROPERTY FOLDER "examples/chapter-06")
+set_property(TARGET string-concatenation   PROPERTY FOLDER "examples/chapter-06")
+set_property(TARGET string-concatenation-refs   PROPERTY FOLDER "examples/chapter-06")
