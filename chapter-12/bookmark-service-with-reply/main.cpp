@@ -86,7 +86,7 @@ int main(int argc, char *argv[])
             return reactive::operators::filter(apply_with_client(f));
         };
 
-    boost::asio::io_service event_loop;
+    asio::io_context event_loop;
 
     auto pipeline =
         service(event_loop)

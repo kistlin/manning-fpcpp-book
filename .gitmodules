@@ -7,3 +7,6 @@
 [submodule "3rd-party/ericniebler/range-v3"]
 	path = 3rd-party/ericniebler/range-v3
 	url = https://github.com/ericniebler/range-v3.git
+[submodule "3rd-party/chriskohlhoff/asio"]
+	path = 3rd-party/chriskohlhoff/asio
+	url = ../asio.git

@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
 {
     using namespace reactive::operators;
 
-    boost::asio::io_service event_loop;
+    asio::io_context event_loop;
 
     auto pipeline =
         service(event_loop)

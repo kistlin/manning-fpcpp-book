@@ -1,7 +1,7 @@
 
 #include "service.h"
 
-service::service(boost::asio::io_service& service,
+service::service(asio::io_context& service,
                  unsigned short port)
     : m_acceptor(service, tcp::endpoint(tcp::v4(), port))
     , m_socket(service)
@@ -11,7 +11,7 @@ service::service(boost::asio::io_service& service,
 void service::do_accept()
 {
     m_acceptor.async_accept(
-        m_socket, [this] (const boost::system::error_code& error) {
+        m_socket, [this] (const asio::error_code& error) {
             if (!error) {
                 // Creating a new session and start listing for
                 // client messages
@@ -31,4 +31,3 @@ void service::do_accept()
             do_accept();
         });
 }
-

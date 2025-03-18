@@ -1,0 +1,167 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "linux-configure-base",
+      "displayName": "Linux Debug",
+      "description": "Target the Windows Subsystem for Linux (WSL) or a remote Linux system.",
+      "hidden": true,
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/out/build/${presetName}",
+      "installDir": "${sourceDir}/out/install/${presetName}",
+      "cacheVariables": {
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "ASIO_STANDALONE": "ON"
+      },
+      "environment": {
+        "PATH": "${sourceDir}/.venv/bin:$penv{PATH}"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Linux"
+      }
+    },
+    {
+      "name": "macos-configure-base",
+      "displayName": "macOS Debug",
+      "description": "",
+      "hidden": true,
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/out/build/${presetName}",
+      "installDir": "${sourceDir}/out/install/${presetName}",
+      "cacheVariables": {
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "ASIO_STANDALONE": "ON"
+      },
+      "environment": {
+        "PATH": "${sourceDir}/.venv/bin:$penv{PATH}"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Darwin"
+      }
+    },
+    {
+      "name": "windows-configure-base",
+      "displayName": "Windows Debug",
+      "description": "",
+      "hidden": true,
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/out/build/${presetName}",
+      "installDir": "${sourceDir}/out/install/${presetName}",
+      "cacheVariables": {
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "ASIO_STANDALONE": "ON"
+      },
+      "environment": {
+        "PATH": "${sourceDir}/.venv/bin;$penv{PATH}"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows"
+      }
+    },
+    {
+      "name": "linux-host-debug",
+      "inherits": "linux-configure-base",
+
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Linux"
+      }
+    },
+    {
+      "name": "linux-host-relwithdebinfo",
+      "inherits": "linux-configure-base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Linux"
+      }
+    },
+    {
+      "name": "macos-host-debug",
+      "inherits": "macos-configure-base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Darwin"
+      }
+    },
+    {
+      "name": "macos-host-relwithdebinfo",
+      "inherits": "macos-configure-base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Darwin"
+      }
+    },
+    {
+      "name": "windows-host-debug",
+      "inherits": "windows-configure-base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows"
+      }
+    },
+    {
+      "name": "windows-host-relwithdebinfo",
+      "inherits": "windows-configure-base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "linux-build-host-debug",
+      "configurePreset": "linux-host-debug"
+    },
+    {
+      "name": "linux-build-host-relwithdebinfo",
+      "configurePreset": "linux-host-relwithdebinfo"
+    },
+    {
+      "name": "macos-build-host-debug",
+      "configurePreset": "macos-host-debug"
+    },
+    {
+      "name": "macos-build-host-relwithdebinfo",
+      "configurePreset": "macos-host-relwithdebinfo"
+    },
+    {
+      "name": "windows-build-host-debug",
+      "configurePreset": "windows-host-debug"
+    },
+    {
+      "name": "windows-build-host-relwithdebinfo",
+      "configurePreset": "windows-host-relwithdebinfo"
+    }
+  ]
+}
