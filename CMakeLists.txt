@@ -5,9 +5,7 @@ SET(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(FPCPP)
 
-if (ASIO_STANDALONE)
-    add_compile_definitions("ASIO_STANDALONE")
-endif ()
+add_compile_definitions("ASIO_STANDALONE")
 
 include_directories(BEFORE SYSTEM ${CMAKE_CURRENT_SOURCE_DIR}/3rd-party/ericniebler/range-v3/include)
 include_directories(BEFORE SYSTEM ${CMAKE_CURRENT_SOURCE_DIR}/3rd-party/nlohmann/json/include)
@@ -31,4 +29,4 @@ add_subdirectory(chapter-09)
 add_subdirectory(chapter-10)
 add_subdirectory(chapter-11)
 add_subdirectory(chapter-12)
-#add_subdirectory(chapter-13)
+add_subdirectory(chapter-13)

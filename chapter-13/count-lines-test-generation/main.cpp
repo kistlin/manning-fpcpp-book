@@ -15,7 +15,7 @@ using namespace ranges::v3;
 #include <time.h>
 
 #define CATCH_CONFIG_MAIN
-#include <catch2/catch.hpp>
+#include <catch2/catch_all.hpp>
 
 
 template < typename Iter
@@ -75,5 +75,3 @@ TEST_CASE("Checling line counts for automatically generated tests", "[counting_l
         }
     }
 }
-
-
