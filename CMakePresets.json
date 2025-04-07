@@ -10,8 +10,7 @@
       "binaryDir": "${sourceDir}/out/build/${presetName}",
       "installDir": "${sourceDir}/out/install/${presetName}",
       "cacheVariables": {
-        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
-        "ASIO_STANDALONE": "ON"
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
       },
       "environment": {
         "PATH": "${sourceDir}/.venv/bin:$penv{PATH}"
@@ -31,8 +30,7 @@
       "binaryDir": "${sourceDir}/out/build/${presetName}",
       "installDir": "${sourceDir}/out/install/${presetName}",
       "cacheVariables": {
-        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
-        "ASIO_STANDALONE": "ON"
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
       },
       "environment": {
         "PATH": "${sourceDir}/.venv/bin:$penv{PATH}"
@@ -52,8 +50,7 @@
       "binaryDir": "${sourceDir}/out/build/${presetName}",
       "installDir": "${sourceDir}/out/install/${presetName}",
       "cacheVariables": {
-        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
-        "ASIO_STANDALONE": "ON"
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
       },
       "environment": {
         "PATH": "${sourceDir}/.venv/bin;$penv{PATH}"

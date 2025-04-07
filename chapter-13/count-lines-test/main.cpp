@@ -12,7 +12,7 @@
 using namespace ranges::v3;
 
 #define CATCH_CONFIG_MAIN
-#include <catch2/catch.hpp>
+#include <catch2/catch_all.hpp>
 
 
 template < typename Iter
@@ -54,5 +54,3 @@ TEST_CASE("Counting newlines in a range", "[counting_lines]")
 
     REQUIRE(count_lines(begin(r), end(r)) == 2);
 }
-
-
