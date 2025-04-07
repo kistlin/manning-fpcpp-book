@@ -5,15 +5,13 @@ SET(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(FPCPP)
 
-if (ASIO_STANDALONE)
-    add_compile_definitions("ASIO_STANDALONE")
-endif ()
+add_compile_definitions("ASIO_STANDALONE")
 
 include_directories(BEFORE SYSTEM ${CMAKE_CURRENT_SOURCE_DIR}/3rd-party/ericniebler/range-v3/include)
 include_directories(BEFORE SYSTEM ${CMAKE_CURRENT_SOURCE_DIR}/3rd-party/nlohmann/json/include)
 include_directories(BEFORE SYSTEM ${CMAKE_CURRENT_SOURCE_DIR}/3rd-party/chriskohlhoff/asio/asio/include)
 
-find_package(Catch2 REQUIRED)
+find_package(Catch2 3.8 REQUIRED HINTS ${CMAKE_CURRENT_SOURCE_DIR}/3rd-party/catchorg/Catch2)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
@@ -31,4 +29,4 @@ add_subdirectory(chapter-09)
 add_subdirectory(chapter-10)
 add_subdirectory(chapter-11)
 add_subdirectory(chapter-12)
-#add_subdirectory(chapter-13)
+add_subdirectory(chapter-13)
